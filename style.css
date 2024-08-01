@@ -1,4 +1,6 @@
 :root {
+  --light-tomato: hsl(4, 100%, 67%, 0.1);
+  --shodow-tomato: hsl(4, 100%, 67%, 0.5);
   --tomato: hsl(4, 100%, 67%);
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
@@ -20,15 +22,21 @@ body {
   justify-items: center;
   font-family: Roboto;
   color: var(--dark-slate-grey);
+  background-color: var(--dark-slate-grey);
 }
 
 .login {
   width: 100%;
   max-width: 375px;
+  background-color: white;
 }
 
 img {
   width: 100%;
+}
+
+img.desktop {
+  display: none;
 }
 
 .panel {
@@ -45,7 +53,7 @@ p {
 }
 
 ul {
-  margin-top: 30px;
+  margin-top: 24px;
 }
 
 li {
@@ -85,10 +93,22 @@ form {
 .email-box span {
   font-size: 12px;
   margin-left: auto;
+  color: var(--tomato);
 }
 
 input {
   border: 1px solid var(--grey);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  outline: none;
+  margin-top: 8px;
+}
+
+input.error {
+  border: 1px solid var(--tomato);
+  color: var(--tomato);
+  background-color: var(--light-tomato);
   border-radius: 8px;
   padding: 16px;
   font-size: 16px;
@@ -105,4 +125,115 @@ button {
   background: var(--dark-slate-grey);
   color: white;
   margin-top: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, hsl(348, 94%, 67%), hsl(4, 100%, 67%));
+  box-shadow: 0 5px 20px var(--shodow-tomato);
+}
+
+button:active {
+  background: linear-gradient(to right, hsl(348, 76%, 62%), hsl(4, 78%, 61%));
+}
+
+.dialog {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: var(--dark-slate-grey);
+  display: none;
+  justify-items: center;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.dialog.show {
+  display: grid;
+  opacity: 1;
+  transition: 300ms;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  height: 100%;
+  padding: 40px 30px;
+  background-color: white;
+}
+
+.subscrible {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30%;
+}
+
+.content img {
+  width: 18%;
+}
+
+.content h2 {
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+@media (min-width: 992px) {
+  body {
+    place-items: center;
+  }
+
+  .login {
+    max-width: 880px;
+    display: grid;
+    grid-template-columns: 1fr minmax(100px, max-content);
+    padding: 20px;
+    border-radius: 32px;
+  }
+
+  img.mobile {
+    display: none;
+  }
+
+  img.desktop {
+    display: block;
+    width: 380px;
+  }
+
+  .panel {
+    margin: 30px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+  .dialog {
+    place-content: center;
+  }
+
+  .content {
+    display: block;
+    width: 430px;
+    height: 430px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 16px;
+  }
+
+  .subscrible {
+    flex: auto;
+    margin-bottom: 0;
+  }
+
+  .content img {
+    width: 18%;
+  }
+
+  .content h2 {
+    font-size: 40px;
+    margin-top: 20px;
+  }
 }
