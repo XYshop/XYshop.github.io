@@ -1,8 +1,8 @@
 :root {
-  --very-dark-grayish-blue: hsl(217, 19%, 35%);
-  --desaturated-dark-blue: hsl(214, 17%, 51%);
-  --grayish-blue: hsl(212, 23%, 69%);
-  --light-grayish-blue: hsl(210, 46%, 95%);
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
 }
 
 *,
@@ -15,198 +15,94 @@
 
 body {
   display: grid;
+  width: 100%;
   height: 100vh;
-  place-items: center;
-  font-family: Manrope;
-  font-size: 13px;
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--light-grayish-blue);
+  justify-items: center;
+  font-family: Roboto;
+  color: var(--dark-slate-grey);
+}
+
+.login {
+  width: 100%;
+  max-width: 375px;
 }
 
 img {
   width: 100%;
 }
 
-article {
-  display: grid;
-  width: 320px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px hsl(0, 0%, 0%, 0.1);
-  height: fit-content;
-}
-
-.drawers {
-  height: 200px;
-  overflow: hidden;
-}
-
-.drawers img {
-  height: 265px;
-  top: -16px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  border-radius: 8px;
+.panel {
+  margin: 30px;
 }
 
 h1 {
-  font-size: 16px;
-  color: var(--very-dark-grayish-blue);
-  margin: 32px 32px 0;
+  font-size: 40px;
 }
 
 p {
-  margin: 16px 32px 10px;
-  color: var(--desaturated-dark-blue);
+  margin-top: 30px;
   line-height: 1.5;
 }
 
-.footer {
-  display: flex;
-  align-items: center;
-  padding: 20px 30px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  height: 80px;
-  transition: 200ms ease-out;
+ul {
+  margin-top: 30px;
 }
 
-.footer.share {
-  height: 70px;
-  margin-top: 20px;
-  transition: 200ms ease-in;
-  background-color: var(--very-dark-grayish-blue);
-}
-
-.footer.share .user-info {
-  display: none;
-}
-
-.footer.share .share-to {
+li {
+  list-style: none;
   display: flex;
 }
 
-.user-info {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: repeat(3, 1fr);
-  height: fit-content;
-  transition: all 300ms;
+li:not(:last-child) {
+  margin-bottom: 20px;
 }
 
-.user-info img {
-  grid-row: 1 / 3;
-  grid-column: 1 / 2;
-  width: 38px;
-  border-radius: 50%;
-}
-
-.user-info .name {
-  grid-row: 1 / 2;
-  grid-column: 2 / 4;
-  font-weight: 700;
-  color: var(--very-dark-grayish-blue);
-}
-
-.user-info .date {
-  grid-row: 2 / 3;
-  grid-column: 2 / 4;
-  color: var(--desaturated-dark-blue);
-  line-height: 1.6;
-}
-
-.share-content {
-  flex: 1;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.share-to {
-  display: none;
-  justify-content: start;
-}
-
-.share-content button {
-  flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--light-grayish-blue);
-  margin-left: auto;
-  place-self: center;
-}
-
-.share-content button img {
-  width: 18px;
-}
-
-.share-to span {
-  letter-spacing: 5px;
-  color: var(--light-grayish-blue);
-}
-
-.share-to img {
+li img {
   width: 20px;
-  margin-left: 16px;
-  vertical-align: middle;
+  margin-right: 20px;
+  margin-bottom: auto;
 }
 
-@media (min-width: 992px) {
-  article {
-    width: 710px;
-    grid-template-columns: 280px 1fr;
-  }
+form {
+  margin-top: 45px;
+}
 
-  h1 {
-    font-size: 20px;
-  }
+.email-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr;
+}
 
-  .drawers {
-    width: 280px;
-    height: 280px;
-  }
+.email-box input {
+  grid-column: span 2;
+}
 
-  .drawers img {
-    width: 330px;
-    height: 330px;
-  }
+.email-box label {
+  font-size: 12px;
+  font-weight: 700;
+}
 
-  .footer.share {
-    background: none;
-  }
+.email-box span {
+  font-size: 12px;
+  margin-left: auto;
+}
 
-  .footer.share .user-info {
-    display: grid;
-  }
+input {
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  outline: none;
+  margin-top: 8px;
+}
 
-  .share-content .share-to {
-    position: absolute;
-    top: -82px;
-    transform: translateX(50%);
-    right: 17px;
-    padding: 16px 30px;
-    background-color: var(--very-dark-grayish-blue);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px hsl(0, 0%, 0%, 0.2);
-  }
-
-  .share-content .share-to::after {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    border: 10px solid transparent;
-    border-top-color: var(--very-dark-grayish-blue);
-    position: absolute;
-    z-index: 999;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 51px;
-  }
+button {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: var(--dark-slate-grey);
+  color: white;
+  margin-top: 20px;
 }

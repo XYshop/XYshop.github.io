@@ -6,51 +6,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="./style.css">
 
-  <title>Frontend Mentor | Article preview component</title>
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
 </head>
 
 <body>
-  <article>
-    <div class="drawers">
-      <img src="./images/drawers.jpg" alt="">
-    </div>
-    <div class="content">
-      <h1>
-        Shift the overall look and feel by adding these wonderful
-        touches to furniture in your home
-      </h1>
-      <p>
-        Ever been in a room and felt like something was missing? Perhaps
-        it felt slightly bare and uninviting. I’ve got some simple tips
-        to help you make any room feel complete.
-      </p>
 
-      <div class="footer">
-        <div class="user-info">
-          <img src="./images/avatar-michelle.jpg" alt="">
-          <span class="name">Michelle Appleton</span>
-          <span class="date">28 Jun 2020</span>
-        </div>
-        <div class="share-content">
-          <div class="share-to">
-            <span>SHARE</span>
-            <img src="./images/icon-facebook.svg" alt="facebook">
-            <img src="./images/icon-twitter.svg" alt="twitter">
-            <img src="./images/icon-pinterest.svg" alt="pinterest">
-          </div>
-          <button><img src="./images/icon-share.svg" alt=""></button>
-        </div>
-      </div>
-    </div>
-  </article>
+  <div class="login">
+    <img src="./assets/images/illustration-sign-up-mobile.svg" alt="">
 
-  <script src="./app.js"></script>
+    <div class="panel">
+      <h1>Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul>
+        <li>
+          <img src="./assets/images/icon-success.svg" alt="">
+          <span>Product discovery and building what matters</span>
+        </li>
+        <li>
+          <img src="./assets/images/icon-success.svg" alt="">
+          <span>Measuring to ensure updates are a success</span>
+        </li>
+        <li>
+          <img src="./assets/images/icon-success.svg" alt="">
+          <span>And much more!</span>
+        </li>
+      </ul>
+
+      <form>
+        <div class="email-box">
+          <label for="email">Email</label>
+          <span>Valid email required</span>
+          <input type="text" id="email" placeholder="email@company.com">
+        </div>
+
+        <button type="submit">Subscribe to monthly newsletter</button>
+      </form>
+    </div>
+
+
+
+  </div>
+
+
+  <!-- Sign-up form start -->
+  <!-- Email address
+  email@company.com -->
+
+
+
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+
+  <!-- Thanks for subscribing!
+
+  A confirmation email has been sent to ash@loremcompany.com.
+  Please open it and click the button inside to confirm your subscription.
+
+  Dismiss message -->
+
+  <!-- Success message end -->
 </body>
 
 </html>
