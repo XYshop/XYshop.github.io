@@ -1,0 +1,92 @@
+@font-face {
+  font-family: Figtree;
+  src: url('./assets/fonts/Figtree-VariableFont_wght.ttf'),
+    url('./assets/fonts/Figtree-Italic-VariableFont_wght.ttf');
+}
+
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+}
+
+*,
+*::backdrop,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Figtree;
+  display: grid;
+  height: 100vh;
+  font-weight: 500;
+  place-items: center;
+  background-color: var(--yellow);
+  color: var(--gray-950);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  display: grid;
+  width: 375px;
+  background-color: var(--white);
+  padding: 1em;
+  border-radius: 1.2em;
+  border: 1px solid var(--gray-950);
+  box-shadow: 0.6em 0.6em var(--gray-950);
+}
+
+.cover {
+  width: 100%;
+  border-radius: 0.7em;
+}
+
+.state {
+  width: fit-content;
+  padding: 0.4em 0.8em;
+  border-radius: 0.3em;
+  margin-top: 1.5em;
+  font-weight: 800;
+  background-color: var(--yellow);
+}
+
+.date {
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: 1.4em;
+  margin-top: 1em;
+  font-weight: 800;
+}
+
+h1:hover {
+  cursor: pointer;
+  color: var(--yellow);
+}
+
+.description {
+  color: var(--gray-500);
+  margin-top: 1em;
+  line-height: 1.6;
+}
+
+.user-info {
+  margin-top: 1.5em;
+}
+
+.user-info img {
+  width: 2em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.user-info span {
+  font-weight: 800;
+}
